@@ -1,0 +1,88 @@
+@media (max-width: 768px) {
+    .navbar-nav {
+        display: none;
+        /* Hide the links */
+    }
+
+    #menu_icon {
+        display: block;
+        border: none;
+        background-color: rgba(93, 80, 198, 1);
+        border: 20px;
+        width: 25px;
+        border-radius: 10px;
+        color: white;
+    }
+
+    #logo_cont {
+        font-weight: 900;
+        text-align: center;
+        /* Center text */
+    }
+
+    .navbar-brand {
+     
+        position: absolute;
+        right: 50%;
+            /* Align menu icon to the left */
+            top: 50%;
+            transform: translateY(-50%);
+    }
+
+    .d-flex {
+        justify-content: flex-end;
+        /* Align buttons to the right */
+    }
+
+    #menu_icon {
+        position: absolute;
+        left: 50px;
+        /* Align menu icon to the left */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+        .row {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 20px;
+            
+        } 
+    
+
+     
+    
+        #f1l {
+            padding: 20px;
+            /* Add padding for better spacing */
+            text-align: center;
+            /* Center-align content for smaller screens */
+        }
+    
+        #text_travel {
+            font-size: 2rem;
+            /* Adjust text size */
+        }
+    
+        #fsection_p {
+            font-size: 1rem;
+            /* Adjust text size */
+            padding: 10px;
+        }
+    
+        #frame7,
+        #frame6 {
+            width: 100%;
+            /* Make buttons full-width */
+            padding: 12px 24px;
+            /* Adjust padding for buttons */
+            margin: 10px 0;
+            /* Add spacing between buttons */
+        }
+
+                #frame85 {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 20px;
+                }
+}
