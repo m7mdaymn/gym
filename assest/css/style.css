@@ -432,11 +432,12 @@ body {
     background-color: #0056b3;
 }
 
-
 /* Membership Plans Section */
 .membership-section {
     background-color: #000000;
     position: relative;
+    padding: 0.5rem 0;
+    margin: 0.5rem 0;
 }
 
 .membership-section::before {
@@ -459,53 +460,77 @@ body {
     letter-spacing: 2px;
     position: relative;
     z-index: 2;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
 }
 
 .plan-card {
-    background-color: #333333;
+    background: linear-gradient(145deg, #333333, #1a1a1a);
     border: 1px solid #FFFFFF;
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 2rem;
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     z-index: 2;
     overflow: hidden;
+    min-height: 520px; /* Increased height to accommodate longer list */
 }
 
 .plan-card:hover {
-    transform: translateY(-10px) rotateX(10deg);
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.15);
+    border-color: #CCCCCC;
 }
 
-.plan-card::before {
-    content: '✨';
+.plan-card.premium {
+    border: 2px solid #FFD700; /* Gold border for premium plan */
+    background: linear-gradient(145deg, #444444, #222222);
+}
+
+.plan-img-wrapper {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.plan-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.plan-card:hover .plan-img {
+    transform: scale(1.05);
+}
+
+.premium-badge {
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 2rem;
-    opacity: 0;
-    animation: sparkle 2s infinite;
-    z-index: 3;
-    color: #FFFFFF;
-}
-
-@keyframes sparkle {
-    0% { opacity: 0; transform: scale(0); }
-    50% { opacity: 1; transform: scale(1); }
-    100% { opacity: 0; transform: scale(0); }
+    background-color: #FFD700;
+    color: #000000;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    text-transform: uppercase;
 }
 
 .plan-card h3 {
     color: #FFFFFF;
     font-weight: 600;
     text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
-.plan-card p {
+.plan-card .price {
     color: #CCCCCC;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 500;
+    margin-bottom: 1rem;
 }
 
 .plan-card ul {
@@ -516,24 +541,66 @@ body {
 
 .plan-card ul li {
     color: #CCCCCC;
+    font-size: 1rem;
     margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.plan-card ul li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: #FFFFFF;
+    font-size: 1.2rem;
 }
 
 .plan-card .btn-primary {
     background-color: #FFFFFF;
     border-color: #FFFFFF;
     color: #000000;
-    transition: background-color 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0.75rem 1.5rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .plan-card .btn-primary:hover {
     background-color: #CCCCCC;
+    transform: scale(1.05);
 }
 
-/* Shop Section */
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .membership-section h2 {
+        font-size: 2rem;
+    }
+
+    .plan-img {
+        height: 150px;
+    }
+
+    .plan-card {
+        min-height: 480px; /* Adjusted for mobile */
+    }
+
+    .plan-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .plan-card .price {
+        font-size: 1.1rem;
+    }
+
+    .plan-card ul li {
+        font-size: 0.9rem;
+    }
+}/* Shop Section */
 .shop-section {
     background-color: #333333;
     position: relative;
+    padding: 7rem 0;
+    margin: 8rem 0;
 }
 
 .shop-section h2 {
@@ -543,34 +610,117 @@ body {
     letter-spacing: 2px;
     position: relative;
     z-index: 2;
-    padding-top: 50px;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
 }
 
-.shop-section .feature-card {
+.shop-card {
+    background: linear-gradient(145deg, #333333, #1a1a1a);
     border: 2px solid transparent;
-    transition: border 0.3s ease;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
     position: relative;
     z-index: 2;
+    overflow: hidden;
+    margin-bottom: 2rem;
 }
 
-.shop-section .feature-card:hover {
+.shop-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.15);
     border: 2px solid #FFFFFF;
 }
 
-.shop-section .feature-card::before {
-    position: absolute;
-    top: -40px;
-    left: 20px;
-    font-size: 3rem;
-    opacity: 0.2;
-    z-index: 1;
-    color: #FFFFFF;
+.shop-card.best-seller {
+    border: 2px solid #FF6347; /* Tomato red border for best seller */
+    background: linear-gradient(145deg, #444444, #222222);
 }
 
+.shop-img-wrapper {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.shop-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.shop-card:hover .shop-img {
+    transform: scale(1.05);
+}
+
+.best-seller-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #FF6347;
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.shop-card h4 {
+    color: #FFFFFF;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.shop-card p {
+    color: #CCCCCC;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.shop-card .btn-outline-light {
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0.75rem 1.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.shop-card .btn-outline-light:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+    transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .shop-section h2 {
+        font-size: 2rem;
+    }
+
+    .shop-img {
+        height: 200px;
+    }
+
+    .shop-card h4 {
+        font-size: 1.3rem;
+    }
+
+    .shop-card p {
+        font-size: 0.9rem;
+    }
+}
 /* Blog Section */
 .blog-section {
     background-color: #000000;
     position: relative;
+    padding: 7rem 0;
+    margin: 8rem 0;
 }
 
 .blog-section::before {
@@ -591,7 +741,8 @@ body {
     letter-spacing: 2px;
     position: relative;
     z-index: 2;
-    padding-top: 50px;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
 }
 
 .blog-section h3 {
@@ -601,49 +752,118 @@ body {
     letter-spacing: 1px;
     position: relative;
     z-index: 2;
-    padding-top: 50px;
+    font-size: 1.8rem;
 }
 
-.blog-section .feature-card {
+.blog-card {
+    background: linear-gradient(145deg, #333333, #1a1a1a);
     border: 1px solid #CCCCCC;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     z-index: 2;
-    padding-top: 50px;
 }
 
-.blog-section .feature-card:hover {
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.15);
+    background: linear-gradient(145deg, #444444, #222222);
+}
+
+.blog-card.featured {
+    border: 2px solid #00CED1; /* Cyan border for featured post */
+}
+
+.blog-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover .blog-img {
+    transform: scale(1.05);
+}
+
+.featured-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #00CED1;
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.blog-content {
+    padding: 1.5rem;
+}
+
+.blog-card h4 {
+    color: #FFFFFF;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.blog-card p {
+    color: #CCCCCC;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.blog-card .btn-outline-light {
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.blog-card .btn-outline-light:hover {
     background-color: #FFFFFF;
     color: #000000;
+    transform: scale(1.05);
 }
 
-.blog-section .feature-card:hover h4,
-.blog-section .feature-card:hover p {
-    color: #000000;
-}
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .blog-section h2 {
+        font-size: 2rem;
+    }
 
-.blog-section .feature-card:hover .btn {
-    background-color: #000000;
-    color: #FFFFFF;
-    border-color: #000000;
-}
+    .blog-section h3 {
+        font-size: 1.5rem;
+    }
 
-.blog-section .feature-card::after {
-    position: absolute;
-    bottom: -30px;
-    right: 20px;
-    font-size: 3rem;
-    opacity: 0.2;
-    z-index: 1;
-    color: #FFFFFF;
-}
+    .blog-img {
+        height: 150px;
+    }
 
+    .blog-card h4 {
+        font-size: 1.2rem;
+    }
+
+    .blog-card p {
+        font-size: 0.9rem;
+    }
+
+    .blog-content {
+        padding: 1rem;
+    }
+}
 /* Workouts Section */
 .workouts-section {
     background-color: #000000;
     position: relative;
-    padding-top: 50px;
-
+    padding: 7rem 0;
+    margin: 8rem 0;
 }
 
 .workouts-section::after {
@@ -664,17 +884,18 @@ body {
     letter-spacing: 2px;
     position: relative;
     z-index: 2;
-    padding-top: 50px;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
 }
 
-.workouts-section .feature-card {
+.workout-card {
     perspective: 1000px;
     position: relative;
     z-index: 2;
-    padding-bottom: 50px;
+    height: 400px; /* Fixed height for consistency */
 }
 
-.workouts-section .feature-card:hover .card-inner {
+.workout-card:hover .card-inner {
     transform: rotateY(180deg);
 }
 
@@ -682,12 +903,9 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 0.6s;
+    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Smoother flip with bounce */
     transform-style: preserve-3d;
     z-index: 3;
-    padding-top: 20px;
-    padding-bottom: 70px;
-
 }
 
 .card-front, .card-back {
@@ -699,103 +917,391 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(145deg, #333333, #1a1a1a);
+    border: 1px solid #CCCCCC;
+    border-radius: 15px;
+    padding: 1.5rem;
 }
 
 .card-back {
     transform: rotateY(180deg);
-    background: #000000;
-    color: #ffffff;
-    padding: 1rem;
+    background: linear-gradient(145deg, #444444, #222222);
 }
 
-.workouts-section .feature-card::before {
+.workout-card.popular .card-front {
+    border: 2px solid #32CD32; /* Lime green border for most popular */
+}
+
+.workout-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.workout-card:hover .workout-img {
+    transform: scale(1.05);
+}
+
+.popular-badge {
     position: absolute;
-    top: -40px;
-    right: 20px;
-    font-size: 3rem;
-    opacity: 0.2;
-    z-index: 1;
+    top: 10px;
+    right: 10px;
+    background-color: #32CD32;
     color: #FFFFFF;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    text-transform: uppercase;
 }
 
-/* Nutrition Section */
+.intensity-label {
+    display: inline-block;
+    background-color: #555555;
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    margin-top: 0.5rem;
+}
+
+.workout-card h4 {
+    color: #FFFFFF;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.workout-card p {
+    color: #CCCCCC;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.workout-card .btn-outline-light {
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.workout-card .btn-outline-light:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+    transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .workouts-section h2 {
+        font-size: 2rem;
+    }
+
+    .workout-card {
+        height: 380px;
+    }
+
+    .workout-img {
+        height: 150px;
+    }
+
+    .workout-card h4 {
+        font-size: 1.2rem;
+    }
+
+    .workout-card p {
+        font-size: 0.9rem;
+    }
+}/* Nutrition Section */
 .nutrition-section {
     background-color: #333333;
     position: relative;
+    padding: 7rem 0;
+    margin: 8rem 0;
 }
 
 .nutrition-section h2 {
-    padding-top: 50px;
     color: #FFFFFF;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
     position: relative;
     z-index: 2;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
 }
 
-.nutrition-section .feature-card {
+.nutrition-card {
+    background: linear-gradient(145deg, #333333, #1a1a1a);
+    border: 1px solid #CCCCCC;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     z-index: 2;
+    overflow: hidden;
 }
 
-.nutrition-section .feature-card::after {
+.nutrition-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.15);
+}
+
+.nutrition-card.recommended {
+    border: 2px solid #FFA500; /* Orange border for recommended */
+}
+
+.nutrition-img-wrapper {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.nutrition-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.nutrition-card:hover .nutrition-img {
+    opacity: 0.8;
+}
+
+.nutrition-img-wrapper::after {
+    content: '';
     position: absolute;
-    bottom: -30px;
-    left: 20px;
-    font-size: 3rem;
-    opacity: 0.2;
-    z-index: 1;
-    color: #FFFFFF;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
+.nutrition-card:hover .nutrition-img-wrapper::after {
+    opacity: 1;
+}
+
+.recommended-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #FFA500;
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.nutrition-card h4 {
+    color: #FFFFFF;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.nutrition-card p {
+    color: #CCCCCC;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.nutrition-card .btn-outline-light {
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.nutrition-card .btn-outline-light:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+    transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .nutrition-section h2 {
+        font-size: 2rem;
+    }
+
+    .nutrition-img {
+        height: 150px;
+    }
+
+    .nutrition-card h4 {
+        font-size: 1.2rem;
+    }
+
+    .nutrition-card p {
+        font-size: 0.9rem;
+    }
+}
 /* Progress Section */
 .progress-section {
     background-color: #000000;
     position: relative;
+    padding: 7rem 0;
+    margin: 8rem 0;
 }
 
 .progress-section h2 {
-    padding-top: 50px;
     color: #FFFFFF;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
     position: relative;
     z-index: 2;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
 }
 
-.progress-section .feature-card {
+.progress-card {
+    background: linear-gradient(145deg, #333333, #1a1a1a);
+    border: 1px solid #CCCCCC;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     z-index: 2;
+    overflow: hidden;
 }
 
-.progress-section .feature-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 5px;
-    background: #FFFFFF;
-    transition: width 1s ease;
-    z-index: 3;
+.progress-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.15);
 }
 
-.progress-section .feature-card.active::after {
+.progress-card.milestone {
+    border: 2px solid #FF4500; /* Orange-red border for milestone */
+}
+
+.progress-img-wrapper {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.progress-img {
     width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
 }
 
-.progress-section .feature-card::before {
+.progress-card:hover .progress-img {
+    transform: scale(1.05);
+}
+
+.milestone-badge {
     position: absolute;
-    top: -40px;
-    left: 20px;
-    font-size: 3rem;
-    opacity: 0.2;
-    z-index: 1;
+    top: 10px;
+    right: 10px;
+    background-color: #FF4500;
     color: #FFFFFF;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    text-transform: uppercase;
 }
 
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #555555;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #FFFFFF;
+    transition: width 1.5s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 5px;
+    font-size: 0.8rem;
+    color: #000000;
+    font-weight: 600;
+}
+
+.progress-fill[style*="width: 100%"] {
+    animation: glow 1.5s infinite;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px #FFFFFF; }
+    50% { box-shadow: 0 0 15px #FFFFFF; }
+    100% { box-shadow: 0 0 5px #FFFFFF; }
+}
+
+.progress-card h4 {
+    color: #FFFFFF;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.progress-card p {
+    color: #CCCCCC;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.progress-card .btn-outline-light {
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.progress-card .btn-outline-light:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+    transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .progress-section h2 {
+        font-size: 2rem;
+    }
+
+    .progress-img {
+        height: 150px;
+    }
+
+    .progress-card h4 {
+        font-size: 1.2rem;
+    }
+
+    .progress-card p {
+        font-size: 0.9rem;
+    }
+}
 /* Contact Section */
 .contact-section {
     position: fixed;
@@ -828,7 +1334,17 @@ body {
 }
 
 /* Footer */
+footer .gym-partners img {
+    max-height: 50px;
+    margin: 0 1rem;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
 
+footer .gym-partners img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
 footer {
     background-color: #000000;
     padding: 3rem 0;

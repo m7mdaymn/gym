@@ -347,242 +347,321 @@ session_start();
         </div>
     </section>
 
-    <!-- Membership Plans Section -->
-    <section class="membership-section reveal" id="membership">
-        <!-- Removed background image: Need an image of a fitness transformation -->
-        <div class="container">
-            <h2 class="text-center mb-5">Membership Plans</h2>
+<!-- Membership Plans Section -->
+<section class="membership-section reveal" id="membership">
+    <div class="container">
+        <h2 class="text-center mb-5">Membership Plans</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="plan-card">
+                    <!-- Image placeholder: An image of a person jogging outdoors or using light dumbbells at home -->
+                    <div class="plan-img-wrapper">
+                        <img src="image/basic-plan.jpg" alt="Basic Plan" class="plan-img">
+                    </div>
+                    <h3>Basic Plan</h3>
+                    <p class="price">$29.99/month</p>
+                    <ul>
+                        <li>Workout Plans</li>
+                        <li>Nutrition Guidance</li>
+                        <li>Progress Tracking</li>
+                    </ul>
+                    <a href="php/membership/plans.php" class="btn btn-primary">Choose Plan</a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="plan-card">
+                    <!-- Image placeholder: An image of a personal trainer guiding a client in a gym -->
+                    <div class="plan-img-wrapper">
+                        <img src="image/pro-plan.jpg" alt="Pro Plan" class="plan-img">
+                    </div>
+                    <h3>Pro Plan</h3>
+                    <p class="price">$49.99/month</p>
+                    <ul>
+                        <li>Custom Workouts</li>
+                        <li>Nutrition Plans</li>
+                        <li>Trainer Access</li>
+                    </ul>
+                    <a href="php/membership/plans.php" class="btn btn-primary">Choose Plan</a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="plan-card premium">
+                    <!-- Image placeholder: An image of a luxurious gym setup or a person in a premium studio -->
+                    <div class="plan-img-wrapper">
+                        <img src="image/elite-plan.jpg" alt="Elite Plan" class="plan-img">
+                        <span class="premium-badge">Premium</span>
+                    </div>
+                    <h3>Elite Plan</h3>
+                    <p class="price">$99.99/month</p>
+                    <ul>
+                        <li>Personalized Coaching</li>
+                        <li>Exclusive Group Classes</li>
+                        <li>Priority Support Access</li>
+                        <li>Advanced Progress Analytics</li>
+                        <li>Monthly Fitness Assessments</li>
+                        <li>VIP Event Invitations</li>
+                    </ul>
+                    <a href="php/membership/plans.php" class="btn btn-primary">Choose Plan</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Shop Section -->
+<section class="shop-section reveal" id="shop">
+    <div class="container">
+        <h2 class="text-center mb-5">Fitness Shop</h2>
+        <div class="row text-center">
+            <div class="col-md-6 mb-4">
+                <div class="shop-card best-seller">
+                    <!-- Image placeholder: An image of fitness supplements like protein powder and a shaker bottle -->
+                    <div class="shop-img-wrapper">
+                        <img src="image/supplements.jpg" alt="Supplements" class="shop-img">
+                        <span class="best-seller-badge">Best Seller</span>
+                    </div>
+                    <h4>Premium Supplements</h4>
+                    <p>Elevate your performance with our top-rated protein powders, pre-workouts, and recovery formulas.</p>
+                    <a href="php/ecommerce/store.php" class="btn btn-outline-light">Shop Now</a>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="shop-card">
+                    <!-- Image placeholder: An image of fitness equipment like dumbbells and resistance bands -->
+                    <div class="shop-img-wrapper">
+                        <img src="image/equipment.jpg" alt="Equipment" class="shop-img">
+                    </div>
+                    <h4>Durable Equipment</h4>
+                    <p>Build your home gym with our high-quality dumbbells, kettlebells, and resistance bands.</p>
+                    <a href="php/ecommerce/store.php" class="btn btn-outline-light">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- Blog Section -->
+<section class="blog-section reveal" id="blog">
+    <div class="container">
+        <h2 class="text-center mb-5">Fitness Blog</h2>
+        <div class="mb-5">
+            <h3 class="text-center mb-4">Fitness Tips</h3>
             <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="plan-card">
-                        <h3>Basic Plan</h3>
-                        <p>$29.99/month</p>
-                        <ul>
-                            <li>Workout Plans</li>
-                            <li>Nutrition Guidance</li>
-                            <li>Progress Tracking</li>
-                        </ul>
-                        <a href="php/membership/plans.php" class="btn btn-primary">Choose Plan</a>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="plan-card">
-                        <h3>Pro Plan</h3>
-                        <p>$49.99/month</p>
-                        <ul>
-                            <li>Custom Workouts</li>
-                            <li>Nutrition Plans</li>
-                            <li>Trainer Access</li>
-                        </ul>
-                        <a href="php/membership/plans.php" class="btn btn-primary">Choose Plan</a>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="plan-card">
-                        <h3>Elite Plan</h3>
-                        <p>$99.99/month</p>
-                        <ul>
-                            <li>Personalized Coaching</li>
-                            <li>Exclusive Classes</li>
-                            <li>Priority Support</li>
-                        </ul>
-                        <a href="php/membership/plans.php" class="btn btn-primary">Choose Plan</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Shop Section -->
-    <section class="shop-section reveal" id="shop">
-        <!-- Removed background image: Need an image of a fitness store -->
-        <div class="container">
-            <h2 class="text-center mb-5">Fitness Shop</h2>
-            <div class="row text-center">
                 <div class="col-md-6 mb-4">
-                    <div class="feature-card">
-                        <!-- Removed image: Need an image of fitness supplements -->
-                        <h4>Supplements</h4>
-                        <p>Boost your performance with our protein powders.</p>
-                        <a href="php/ecommerce/store.php" class="btn btn-outline-light">Shop Now</a>
+                    <div class="blog-card">
+                        <div class="row g-0">
+                            <div class="col-md-5">
+                                <!-- Image placeholder: An image of a person doing a high-intensity workout -->
+                                <img src="image/top-5-workouts.jpg" alt="Top 5 Workouts" class="blog-img">
+                            </div>
+                            <div class="col-md-7 d-flex align-items-center">
+                                <div class="blog-content">
+                                    <h4>Top 5 Workouts for Strength</h4>
+                                    <p>Discover the best exercises to build strength and endurance, perfect for all fitness levels.</p>
+                                    <a href="php/blog/index.php" class="btn btn-outline-light">Read More</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
-                    <div class="feature-card">
-                        <!-- Removed image: Need an image of fitness equipment -->
-                        <h4>Equipment</h4>
-                        <p>High-quality weights and accessories.</p>
-                        <a href="php/ecommerce/store.php" class="btn btn-outline-light">Shop Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section class="blog-section reveal" id="blog">
-        <!-- Removed background image: Need an image of a fitness-related article or book -->
-        <div class="container">
-            <h2 class="text-center mb-5">Fitness Blog</h2>
-            <div class="mb-5">
-                <h3 class="text-center mb-4">Fitness Tips</h3>
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <div class="feature-card text-center">
-                            <h4>Top 5 Workouts</h4>
-                            <p>Best exercises to build strength and endurance.</p>
-                            <a href="php/blog/index.php" class="btn btn-outline-light">Read More</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <div class="feature-card text-center">
-                            <h4>Nutrition Tips</h4>
-                            <p>How to fuel your body for optimal performance.</p>
-                            <a href="php/blog/index.php" class="btn btn-outline-light">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <h3 class="text-center mb-4">Recovery Guides</h3>
-                <div class="row">
-                    <div class="col-md-12 mb-4">
-                        <div class="feature-card text-center">
-                            <h4>Recovery Guide</h4>
-                            <p>Essential tips for post-workout recovery.</p>
-                            <a href="php/blog/index.php" class="btn btn-outline-light">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Workouts Section -->
-    <section class="workouts-section reveal" id="workouts">
-        <div class="container">
-            <h2 class="text-center mb-5">Workout Plans</h2>
-            <div class="row text-center">
-                <div class="col-md-4 mb-4">
-                    <div class="feature-card">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <!-- Removed image: Need an image of a cardio workout -->
-                                <h4>Cardio Plans</h4>
-                                <p>Boost your endurance with tailored cardio routines.</p>
+                    <div class="blog-card">
+                        <div class="row g-0">
+                            <div class="col-md-5">
+                                <!-- Image placeholder: An image of a colorful, healthy meal prep setup -->
+                                <img src="image/nutrition-tips.jpg" alt="Nutrition Tips" class="blog-img">
                             </div>
-                            <div class="card-back">
-                                <h4>Details</h4>
-                                <p>Includes running, cycling, and HIIT workouts.</p>
-                                <a href="php/workout/plans.php" class="btn btn-outline-light">Start Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="feature-card">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <!-- Removed image: Need an image of a strength training workout -->
-                                <h4>Strength Plans</h4>
-                                <p>Build muscle with structured strength programs.</p>
-                            </div>
-                            <div class="card-back">
-                                <h4>Details</h4>
-                                <p>Focus on compound lifts and progressive overload.</p>
-                                <a href="php/workout/plans.php" class="btn btn-outline-light">Start Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="feature-card">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <!-- Removed image: Need an image of a flexibility workout -->
-                                <h4>Flexibility Plans</h4>
-                                <p>Improve mobility with yoga and stretching.</p>
-                            </div>
-                            <div class="card-back">
-                                <h4>Details</h4>
-                                <p>Includes daily stretching and yoga flows.</p>
-                                <a href="php/workout/plans.php" class="btn btn-outline-light">Start Now</a>
+                            <div class="col-md-7 d-flex align-items-center">
+                                <div class="blog-content">
+                                    <h4>Nutrition Tips for Peak Performance</h4>
+                                    <p>Learn how to fuel your body with the right nutrients for optimal fitness results.</p>
+                                    <a href="php/blog/index.php" class="btn btn-outline-light">Read More</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Nutrition Section -->
-    <section class="nutrition-section reveal" id="nutrition">
-        <!-- Removed background image: Need an image of healthy food -->
-        <div class="container">
-            <h2 class="text-center mb-5">Nutrition Tracking</h2>
-            <div class="row text-center">
-                <div class="col-md-4 mb-4">
-                    <div class="feature-card">
-                        <!-- Removed image: Need an image of a meal plan -->
-                        <h4>Meal Plans</h4>
-                        <p>Personalized diet plans to meet your goals.</p>
-                        <a href="php/nutrition/meal_plan.php" class="btn btn-outline-light">Get Plan</a>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="feature-card">
-                        <!-- Removed image: Need an image of calorie tracking -->
-                        <h4>Calorie Tracking</h4>
-                        <p>Monitor your daily calorie intake.</p>
-                        <a href="php/nutrition/meal_plan.php" class="btn btn-outline-light">Track Now</a>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="feature-card">
-                        <!-- Removed image: Need an image of healthy recipes -->
-                        <h4>Recipes</h4>
-                        <p>Healthy recipes to fuel your fitness.</p>
-                        <a href="php/nutrition/meal_plan.php" class="btn btn-outline-light">Browse Recipes</a>
+        <div>
+            <h3 class="text-center mb-4">Recovery Guides</h3>
+            <div class="row">
+                <div class="col-md-12 mb-4">
+                    <div class="blog-card featured">
+                        <div class="row g-0">
+                            <div class="col-md-5">
+                                <!-- Image placeholder: An image of a person stretching or foam rolling -->
+                                <img src="image/recovery-guide.jpg" alt="Recovery Guide" class="blog-img">
+                                <span class="featured-badge">Featured</span>
+                            </div>
+                            <div class="col-md-7 d-flex align-items-center">
+                                <div class="blog-content">
+                                    <h4>Ultimate Recovery Guide</h4>
+                                    <p>Explore essential tips for effective post-workout recovery to keep you at your best.</p>
+                                    <a href="php/blog/index.php" class="btn btn-outline-light">Read More</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Progress Section -->
-    <section class="progress-section reveal" id="progress">
-        <!-- Removed background image: Need an image of a progress chart or fitness tracking -->
-        <div class="container">
-            <h2 class="text-center mb-5">Track Your Progress</h2>
-            <div class="row text-center">
-                <div class="col-md-4 mb-4">
-                    <div class="feature-card">
-                        <i class="fas fa-weight fa-3x mb-3"></i>
-                        <h4>Weight Tracking</h4>
-                        <p>Monitor your weight changes over time.</p>
-                        <a href="php/progress/log_workout.php" class="btn btn-outline-light">Track Weight</a>
+    </div>
+</section>
+<!-- Workouts Section -->
+<section class="workouts-section reveal" id="workouts">
+    <div class="container">
+        <h2 class="text-center mb-5">Workout Plans</h2>
+        <div class="row text-center">
+            <div class="col-md-4 mb-4">
+                <div class="workout-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <!-- Image placeholder: An image of a person running or cycling -->
+                            <img src="image/cardio-plan.jpg" alt="Cardio Plan" class="workout-img">
+                            <h4>Cardio Plans</h4>
+                            <p>Boost your endurance with tailored cardio routines.</p>
+                            <span class="intensity-label">Intensity: Moderate</span>
+                        </div>
+                        <div class="card-back">
+                            <h4>Details</h4>
+                            <p>Includes running, cycling, and HIIT workouts to improve cardiovascular health.</p>
+                            <a href="php/workout/plans.php" class="btn btn-outline-light">Start Now</a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="feature-card">
-                        <i class="fas fa-chart-bar fa-3x mb-3"></i>
-                        <h4>Workout Stats</h4>
-                        <p>Analyze your workout performance.</p>
-                        <a href="php/progress/log_workout.php" class="btn btn-outline-light">View Stats</a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="workout-card popular">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <!-- Image placeholder: An image of a person lifting heavy weights -->
+                            <img src="image/strength-plan.jpg" alt="Strength Plan" class="workout-img">
+                            <span class="popular-badge">Most Popular</span>
+                            <h4>Strength Plans</h4>
+                            <p>Build muscle with structured strength programs.</p>
+                            <span class="intensity-label">Intensity: High</span>
+                        </div>
+                        <div class="card-back">
+                            <h4>Details</h4>
+                            <p>Focus on compound lifts and progressive overload for maximum gains.</p>
+                            <a href="php/workout/plans.php" class="btn btn-outline-light">Start Now</a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="feature-card">
-                        <i class="fas fa-trophy fa-3x mb-3"></i>
-                        <h4>Achievements</h4>
-                        <p>Celebrate your fitness milestones.</p>
-                        <a href="php/progress/log_workout.php" class="btn btn-outline-light">View Achievements</a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="workout-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <!-- Image placeholder: An image of a person doing a yoga pose -->
+                            <img src="image/flexibility-plan.jpg" alt="Flexibility Plan" class="workout-img">
+                            <h4>Flexibility Plans</h4>
+                            <p>Improve mobility with yoga and stretching.</p>
+                            <span class="intensity-label">Intensity: Low</span>
+                        </div>
+                        <div class="card-back">
+                            <h4>Details</h4>
+                            <p>Includes daily stretching routines and yoga flows for better flexibility.</p>
+                            <a href="php/workout/plans.php" class="btn btn-outline-light">Start Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+<!-- Nutrition Section -->
+<section class="nutrition-section reveal" id="nutrition">
+    <div class="container">
+        <h2 class="text-center mb-5">Nutrition Tracking</h2>
+        <div class="row text-center">
+            <div class="col-md-4 mb-4">
+                <div class="nutrition-card">
+                    <!-- Image placeholder: An image of a weekly meal prep setup -->
+                    <div class="nutrition-img-wrapper">
+                        <img src="image/meal-plan.jpg" alt="Meal Plan" class="nutrition-img">
+                    </div>
+                    <h4>Custom Meal Plans</h4>
+                    <p>Get personalized diet plans tailored to your fitness goals and preferences.</p>
+                    <a href="php/nutrition/meal_plan.php" class="btn btn-outline-light">Get Plan</a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="nutrition-card">
+                    <!-- Image placeholder: An image of a person using a smartphone to log food -->
+                    <div class="nutrition-img-wrapper">
+                        <img src="image/calorie-tracking.jpg" alt="Calorie Tracking" class="nutrition-img">
+                    </div>
+                    <h4>Smart Calorie Tracking</h4>
+                    <p>Easily monitor your daily calorie intake with our intuitive tracking tools.</p>
+                    <a href="php/nutrition/meal_plan.php" class="btn btn-outline-light">Track Now</a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="nutrition-card recommended">
+                    <!-- Image placeholder: An image of a healthy recipe like a smoothie bowl -->
+                    <div class="nutrition-img-wrapper">
+                        <img src="image/recipes.jpg" alt="Recipes" class="nutrition-img">
+                        <span class="recommended-badge">Recommended</span>
+                    </div>
+                    <h4>Healthy Recipes</h4>
+                    <p>Discover delicious, nutrient-packed recipes to fuel your fitness journey.</p>
+                    <a href="php/nutrition/meal_plan.php" class="btn btn-outline-light">Browse Recipes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
+<!-- Progress Section -->
+<section class="progress-section reveal" id="progress">
+    <div class="container">
+        <h2 class="text-center mb-5">Track Your Progress</h2>
+        <div class="row text-center">
+            <div class="col-md-4 mb-4">
+                <div class="progress-card">
+                    <!-- Image placeholder: An image of a person stepping onto a scale -->
+                    <div class="progress-img-wrapper">
+                        <img src="image/weight-tracking.jpg" alt="Weight Tracking" class="progress-img">
+                    </div>
+                    <h4>Weight Tracking</h4>
+                    <p>Monitor your weight changes over time with detailed insights.</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 70%;">70%</div>
+                    </div>
+                    <a href="php/progress/log_workout.php" class="btn btn-outline-light">Track Weight</a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="progress-card">
+                    <!-- Image placeholder: An image of a fitness tracker displaying stats -->
+                    <div class="progress-img-wrapper">
+                        <img src="image/workout-stats.jpg" alt="Workout Stats" class="progress-img">
+                    </div>
+                    <h4>Workout Stats</h4>
+                    <p>Analyze your workout performance with in-depth statistics.</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%;">85%</div>
+                    </div>
+                    <a href="php/progress/log_workout.php" class="btn btn-outline-light">View Stats</a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="progress-card milestone">
+                    <!-- Image placeholder: An image of a person holding a medal or trophy -->
+                    <div class="progress-img-wrapper">
+                        <img src="image/achievements.jpg" alt="Achievements" class="progress-img">
+                        <span class="milestone-badge">Milestone</span>
+                    </div>
+                    <h4>Achievements</h4>
+                    <p>Celebrate your fitness milestones and stay motivated.</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%;">100%</div>
+                    </div>
+                    <a href="php/progress/log_workout.php" class="btn btn-outline-light">View Achievements</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -595,8 +674,8 @@ session_start();
                     <h5>Our Gym Partners</h5>
                     <div class="gym-partners d-flex flex-wrap justify-content-center w-1">
                         <img class="w-" src="image\evolve_text_white.webp" alt="Partner 1">
-                        <!-- <img src="image\logo.webp" alt="Partner 1">
-                        <img src="image\جيماوي-تكست.-1-optimized.webp" alt="Partner 1"> -->
+                        <img src="image\logo.webp" alt="Partner 1">
+                        <img src="image\جيماوي-تكست.-1-optimized.webp" alt="Partner 1">
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
