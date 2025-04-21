@@ -315,7 +315,6 @@ body {
 }
 
 .classes-section .feature-card::after {
-    content: '🏋️';
     position: absolute;
     top: -30px;
     right: 20px;
@@ -559,7 +558,6 @@ body {
 }
 
 .shop-section .feature-card::before {
-    content: '🛒';
     position: absolute;
     top: -40px;
     left: 20px;
@@ -631,7 +629,6 @@ body {
 }
 
 .blog-section .feature-card::after {
-    content: '📖';
     position: absolute;
     bottom: -30px;
     right: 20px;
@@ -790,7 +787,6 @@ body {
 }
 
 .progress-section .feature-card::before {
-    content: '📈';
     position: absolute;
     top: -40px;
     left: 20px;
