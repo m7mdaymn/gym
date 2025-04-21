@@ -1,97 +1,928 @@
 /* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
+    background-color: #000000;
+    color: #FFFFFF;
+    margin: 0;
+    line-height: 1.8;
 }
 
-/* Hero Section */
+/* Navigation Bar */
+.navbar {
+    background-color: #000000;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #FFFFFF;
+    box-shadow: 0 2px 15px rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #FFFFFF !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.navbar-brand:hover {
+    color: #CCCCCC !important;
+}
+
+.nav-link {
+    color: #FFFFFF !important;
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #CCCCCC !important;
+    transform: translateY(-3px);
+}
+
+.nav-link.active {
+    color: #CCCCCC !important;
+    border-bottom: 2px solid #FFFFFF;
+}
+
+.nav-icon {
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-icon:hover {
+    color: #CCCCCC;
+    transform: scale(1.1);
+}
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../image/f9a7a30e3f6cada77cbd30f47f5a430f.jpg');
-    background-size: auto;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-}
-
-.hero-section h1 {
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.hero-section .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    transition: background-color 0.3s ease;
-}
-
-.hero-section .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-}
-
-.hero-section .btn-outline-light:hover {
-    background-color: #dc3545;
-    border-color: #dc3545;
-    color: #fff;
-}
-
-/* Team Cards */
-.team-card {
     position: relative;
+    height: 100vh;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+    border-bottom: 5px solid #FFFFFF;
+    margin: 8rem 0;
+    background: rgba(0, 0, 0, 0.7);
 }
 
-.team-card:hover {
-    transform: scale(1.05);
-}
-
-.team-card img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    display: block; /* Ensures the image behaves as a block element */
-}
-
-.team-card-overlay {
+.hero-section img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 1; /* Ensures the overlay is above the image */
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.5;
 }
 
-.team-card:hover .team-card-overlay {
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: slideIn 1s ease-out;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #CCCCCC;
+    animation: slideIn 1.2s ease-out;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section .btn-primary, .hero-section .btn-outline-light {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section::after {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    font-size: 10rem;
+    opacity: 0.1;
+    z-index: 1;
+    color: #FFFFFF;
+}
+
+@keyframes slideIn {
+    0% { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.hero-section .btn-primary {
+    background-color: #FFFFFF;
+    border-color: #FFFFFF;
+    color: #000000;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    text-transform: uppercase;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hero-section .btn-primary:hover {
+    background-color: #CCCCCC;
+    transform: scale(1.05);
+}
+
+.hero-section .btn-outline-light {
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    text-transform: uppercase;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hero-section .btn-outline-light:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+    transform: scale(1.05);
+}
+
+
+
+/* Features Section */
+.features-section {
+    position: relative;
+    padding: 5rem 0;
+    overflow: hidden;
+}
+
+.features-section .background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.25;  
+}
+
+.features-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.features-section {
+    background-color: #333333;
+}
+
+.features-section h2 {
+    color: #FFFFFF;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeIn 1s ease-in-out;
+    position: relative;
+    z-index: 2;
+}
+
+.feature-card {
+    background-color: #000000;
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+.feature-card i {
+    color: #FFFFFF;
+    position: relative;
+    z-index: 3;
+}
+
+.feature-card h4 {
+    color: #FFFFFF;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.feature-card p {
+    color: #CCCCCC;
+}
+
+.feature-card .btn {
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.feature-card .btn:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, #FFFFFF 0%, transparent 70%);
+    opacity: 0.3;
+    z-index: 1;
+}
+.features-section {
+    background: url("image/gym-background.jpg") center center / cover no-repeat;
+    position: relative;
+    padding: 5rem 0;
+}
+
+.features-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75); /* Overlay to darken background */
+    z-index: 0;
+}
+
+.features-section .container {
+    position: relative;
+    z-index: 1; /* Content above overlay */
+}
+
+
+/* Classes Section */
+.classes-section {
+    background-color: #000000;
+    position: relative;
+}
+
+.classes-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.29,158,28,70.36-5.37,136.33-24.29,206.29-24.29,70.36,0,136.33,19.29,206.29,24.29,54.41,4.29,110.21-5.8,158-28V0Z" fill="%23000000"/></svg>') no-repeat center/cover;
+    z-index: 2;
+}
+
+.classes-section h2 {
+    padding-top: 50px;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 3;
+}
+
+.classes-section .feature-card {
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 3;
+}
+
+.classes-section .feature-card:hover {
+    border-color: #CCCCCC;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+.classes-section .feature-card::after {
+    content: '🏋️';
+    position: absolute;
+    top: -30px;
+    right: 20px;
+    font-size: 3rem;
+    opacity: 0.2;
+    z-index: 2;
+    color: #FFFFFF;
+}
+.feature-card img.class-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+/* Trainers Section */
+.trainers-section {
+    padding: 60px 0;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.trainers-section h2 {
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.trainers-section h2::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: #000000;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.coach-card {
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.coach-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.trainer-img {
+    width: 100%;
+    height:300px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+.card-body h5 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+.card-body .btn {
+    background-color: #ffffff;
+    border: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.card-body .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Modal dark overlay customization */
+.modal-content {
+    background-color: #f8f9fa;
+    color: #333;
+    border-radius: 12px;
+}
+
+.modal-header {
+    background-color: #000000;
+    color: white;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.modal-header .btn-close {
+    filter: invert(1);
+}
+
+.modal-body input,
+.modal-body textarea {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.modal-body .btn-primary {
+    background-color: #0d6efd;
+    border: none;
+}
+
+.modal-body .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+
+/* Membership Plans Section */
+.membership-section {
+    background-color: #000000;
+    position: relative;
+}
+
+.membership-section::before {
+    content: 'Transform Your Body';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.1);
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+.membership-section h2 {
+    color: #FFFFFF;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 2;
+}
+
+.plan-card {
+    background-color: #333333;
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.plan-card:hover {
+    transform: translateY(-10px) rotateX(10deg);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+.plan-card::before {
+    content: '✨';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
+    opacity: 0;
+    animation: sparkle 2s infinite;
+    z-index: 3;
+    color: #FFFFFF;
+}
+
+@keyframes sparkle {
+    0% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0); }
+}
+
+.plan-card h3 {
+    color: #FFFFFF;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.plan-card p {
+    color: #CCCCCC;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.plan-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.plan-card ul li {
+    color: #CCCCCC;
+    margin-bottom: 0.5rem;
+}
+
+.plan-card .btn-primary {
+    background-color: #FFFFFF;
+    border-color: #FFFFFF;
+    color: #000000;
+    transition: background-color 0.3s ease;
+}
+
+.plan-card .btn-primary:hover {
+    background-color: #CCCCCC;
+}
+
+/* Shop Section */
+.shop-section {
+    background-color: #333333;
+    position: relative;
+}
+
+.shop-section h2 {
+    color: #FFFFFF;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 2;
+    padding-top: 50px;
+}
+
+.shop-section .feature-card {
+    border: 2px solid transparent;
+    transition: border 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.shop-section .feature-card:hover {
+    border: 2px solid #FFFFFF;
+}
+
+.shop-section .feature-card::before {
+    content: '🛒';
+    position: absolute;
+    top: -40px;
+    left: 20px;
+    font-size: 3rem;
+    opacity: 0.2;
+    z-index: 1;
+    color: #FFFFFF;
+}
+
+/* Blog Section */
+.blog-section {
+    background-color: #000000;
+    position: relative;
+}
+
+.blog-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.29,158,28,70.36-5.37,136.33-24.29,206.29-24.29,70.36,0,136.33,19.29,206.29,24.29,54.41,4.29,110.21-5.8,158-28V0Z" fill="%23333333"/></svg>') no-repeat center/cover;
+    z-index: 1;
+}
+
+.blog-section h2 {
+    color: #FFFFFF;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 2;
+    padding-top: 50px;
+}
+
+.blog-section h3 {
+    color: #FFFFFF;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 2;
+    padding-top: 50px;
+}
+
+.blog-section .feature-card {
+    border: 1px solid #CCCCCC;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+    z-index: 2;
+    padding-top: 50px;
+}
+
+.blog-section .feature-card:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.blog-section .feature-card:hover h4,
+.blog-section .feature-card:hover p {
+    color: #000000;
+}
+
+.blog-section .feature-card:hover .btn {
+    background-color: #000000;
+    color: #FFFFFF;
+    border-color: #000000;
+}
+
+.blog-section .feature-card::after {
+    content: '📖';
+    position: absolute;
+    bottom: -30px;
+    right: 20px;
+    font-size: 3rem;
+    opacity: 0.2;
+    z-index: 1;
+    color: #FFFFFF;
+}
+
+/* Workouts Section */
+.workouts-section {
+    background-color: #000000;
+    position: relative;
+    padding-top: 50px;
+
+}
+
+.workouts-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,120V73.71c47.79-22.2,103.59-32.29,158-28,70.36,5.37,136.33,24.29,206.29,24.29,70.36,0,136.33-19.29,206.29-24.29,54.41-4.29,110.21,5.8,158,28V120Z" fill="%23000000"/></svg>') no-repeat center/cover;
+    z-index: 1;
+}
+
+.workouts-section h2 {
+    color: #FFFFFF;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 2;
+    padding-top: 50px;
+}
+
+.workouts-section .feature-card {
+    perspective: 1000px;
+    position: relative;
+    z-index: 2;
+    padding-bottom: 50px;
+}
+
+.workouts-section .feature-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    z-index: 3;
+    padding-top: 20px;
+    padding-bottom: 70px;
+
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    background: #000000;
+    color: #ffffff;
+    padding: 1rem;
+}
+
+.workouts-section .feature-card::before {
+    position: absolute;
+    top: -40px;
+    right: 20px;
+    font-size: 3rem;
+    opacity: 0.2;
+    z-index: 1;
+    color: #FFFFFF;
+}
+
+/* Nutrition Section */
+.nutrition-section {
+    background-color: #333333;
+    position: relative;
+}
+
+.nutrition-section h2 {
+    padding-top: 50px;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 2;
+}
+
+.nutrition-section .feature-card {
+    position: relative;
+    z-index: 2;
+}
+
+.nutrition-section .feature-card::after {
+    position: absolute;
+    bottom: -30px;
+    left: 20px;
+    font-size: 3rem;
+    opacity: 0.2;
+    z-index: 1;
+    color: #FFFFFF;
+}
+
+/* Progress Section */
+.progress-section {
+    background-color: #000000;
+    position: relative;
+}
+
+.progress-section h2 {
+    padding-top: 50px;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 2;
+}
+
+.progress-section .feature-card {
+    position: relative;
+    z-index: 2;
+}
+
+.progress-section .feature-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background: #FFFFFF;
+    transition: width 1s ease;
+    z-index: 3;
+}
+
+.progress-section .feature-card.active::after {
+    width: 100%;
+}
+
+.progress-section .feature-card::before {
+    content: '📈';
+    position: absolute;
+    top: -40px;
+    left: 20px;
+    font-size: 3rem;
+    opacity: 0.2;
+    z-index: 1;
+    color: #FFFFFF;
+}
+
+/* Contact Section */
+.contact-section {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    z-index: 1000;
+}
+
+.form-container {
+    display: none;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.form-container.active {
+    display: block;
+}
+
+.contact-section h2 {
+    color: #FFFFFF;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+}
+
+/* Footer */
+
+footer {
+    background-color: #000000;
+    padding: 3rem 0;
+    border-top: 1px solid #FFFFFF;
+    margin: 8rem 0;
+}
+
+footer h5 {
+    color: #FFFFFF;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+footer a {
+    color: #CCCCCC;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #FFFFFF;
+}
+
+/* Contact Form Modal */
+.modal-content {
+    background-color: #333333;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+}
+
+.modal-header, .modal-footer {
+    border-color: #FFFFFF;
+}
+
+.modal-title {
+    color: #FFFFFF;
+}
+
+.form-control {
+    background-color: #000000;
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+}
+
+.form-control:focus {
+    background-color: #000000;
+    border-color: #CCCCCC;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.form-control::placeholder {
+    color: #CCCCCC;
+}
+
+.btn-primary {
+    background-color: #FFFFFF;
+    border-color: #FFFFFF;
+    color: #000000;
+}
+
+.btn-primary:hover {
+    background-color: #CCCCCC;
+}
+
+
+/* Toast Notification */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.toast.show {
     opacity: 1;
 }
 
-.team-card-name {
-    color: #fff;
-    font-size: 1.5rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+/* Scroll-Triggered Animation */
+.reveal {
+    opacity: 0;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* Services Section */
-.services i {
-    color: #007bff;
-}
-
-.services i.text-danger {
-    color: #dc3545;
-}
-
-.services h4 {
-    color: #fff;
-}
-
-.services p {
-    color: #ddd;
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
