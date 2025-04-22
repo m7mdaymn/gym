@@ -1,12 +1,21 @@
 <?php
+session_start();
+
 $host = 'localhost';
-$db = 'fitness_tracker';
-$user = 'root';
-$pass = '';
+$dbname = 'fitness_app';
+$username = 'root'; // Default XAMPP MySQL user
+$password = ''; // Default XAMPP MySQL password (empty)
+
 try {
-    $pdo = new PDO("mysql:host=$host;port=3307;dbname=$db", $user, $pass);
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
+    if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest') {
+        echo json_encode(['success' => false, 'message' => 'Database connection failed. Please try again later.']);
+        exit;
+    } else {
+        die("Connection failed: " . $e->getMessage());
+    }
 }
 ?>
