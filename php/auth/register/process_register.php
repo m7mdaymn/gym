@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
 $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 $password = trim($_POST['password'] ?? '');
-$confirm_password = trim($_POST['confirmPassword'] ?? ''); // Updated to match form's name attribute
+$confirm_password = trim($_POST['confirmPassword'] ?? ''); 
 
 $errors = [];
 
