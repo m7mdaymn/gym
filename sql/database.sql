@@ -11,14 +11,44 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Workouts table (for workout tracking)
+
+
+-- Create a new workouts table that matches log_workout.php data
 CREATE TABLE workouts (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
-    workout_name VARCHAR(100) NOT NULL,
-    duration INT NOT NULL, -- in minutes
-    calories_burned INT,
-    workout_date DATE NOT NULL,
+    exercise VARCHAR(100) NOT NULL,
+    weight DECIMAL(6, 2) NOT NULL, -- e.g., 50.50 kg
+    reps INT NOT NULL,
+    sets INT NOT NULL,
+    rpe INT,
+    workout_date DATETIME NOT NULL,
+    muscle_group VARCHAR(50),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+-- Create table for custom exercises
+CREATE TABLE custom_exercises (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    muscle_group VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+-- Create table for templates
+CREATE TABLE templates (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    template_name VARCHAR(100) NOT NULL,
+    exercise VARCHAR(100) NOT NULL,
+    weight DECIMAL(6, 2) NOT NULL,
+    reps INT NOT NULL,
+    sets INT NOT NULL,
+    rpe INT,
+    muscle_group VARCHAR(50),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
