@@ -269,3 +269,19 @@ INSERT INTO trainer_availability (trainer_id, available_date, start_time, end_ti
 INSERT INTO classes (class_name, description, schedule, trainer_id, capacity) VALUES
 ('Yoga Session', 'A relaxing yoga session for all levels.', '2025-04-26 10:00:00', 1, 2),
 ('Strength Training', 'Build muscle with this intense workout.', '2025-04-27 15:00:00', 2, 20);
+
+-- Indexes for faster lookups
+CREATE INDEX idx_reservations_user_id ON reservations(user_id);
+CREATE INDEX idx_reservations_trainer_id ON reservations(trainer_id);
+CREATE INDEX idx_reservations_class_id ON reservations(class_id);
+CREATE INDEX idx_reservations_date ON reservations(reservation_date);
+CREATE INDEX idx_trainer_availability_trainer_date ON trainer_availability(trainer_id, available_date);
+CREATE INDEX idx_classes_schedule ON classes(schedule);
+
+
+ALTER TABLE reservations ADD COLUMN priority INT DEFAULT 0 AFTER session_focus;
+
+INSERT INTO trainer_availability (trainer_id, available_date, start_time, end_time) 
+VALUES (1, '2025-04-25', '09:00:00', '12:00:00'),
+       (1, '2025-04-25', '14:00:00', '17:00:00'),
+       (2, '2025-04-25', '10:00:00', '13:00:00');

@@ -7,7 +7,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="<?php echo isset($_SESSION['user_id']) ? '../../../index.php' : '../../index.php'; ?>"><i class="fas fa-dumbbell me-2"></i>Fitness App</a>
+        <a class="navbar-brand" href="<?php echo isset($_SESSION['user_id']) ? '../../index.php' : '../../index.php'; ?>"><i class="fas fa-dumbbell me-2"></i>Fitness App</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
