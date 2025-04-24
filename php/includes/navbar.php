@@ -101,7 +101,7 @@ if (session_status() === PHP_SESSION_NONE) {
                             <li><a class="dropdown-item" href="../dashboard/dashboard.php">Dashboard</a></li>
                             <li><a class="dropdown-item" href="../profile/profile.php">Profile</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="../logout/logout.php">Logout</a></li>
+                            <li><a class="dropdown-item" href="../auth/logout/logout.php">Logout</a></li>
                         </ul>
                     </li>
                 <?php else: ?>
