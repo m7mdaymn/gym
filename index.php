@@ -115,7 +115,7 @@ session_start();
                         <i class="fas fa-dumbbell fa-3x mb-3"></i>
                         <h4>Workout Tracking</h4>
                         <p>Log your exercises and monitor your progress with ease.</p>
-                        <a href="php/workout/plans.php" class="btn btn-outline-light">Start Now</a>
+                        <a href="php/workout/workout_plan.php" class="btn btn-outline-light">Start Now</a>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
@@ -525,7 +525,7 @@ session_start();
                             <div class="card-back">
                                 <h4>Details</h4>
                                 <p>Includes running, cycling, and HIIT workouts to improve cardiovascular health.</p>
-                                <a href="php/workout/plans.php" class="btn btn-outline-light">Start Now</a>
+                                <a href="php/workout/workout_plan.php" class="btn btn-outline-light">Start Now</a>
                             </div>
                         </div>
                     </div>
@@ -543,7 +543,7 @@ session_start();
                             <div class="card-back">
                                 <h4>Details</h4>
                                 <p>Focus on compound lifts and progressive overload for maximum gains.</p>
-                                <a href="php/workout/plans.php" class="btn btn-outline-light">Start Now</a>
+                                <a href="php/workout/workout_plan.php" class="btn btn-outline-light">Start Now</a>
                             </div>
                         </div>
                     </div>
@@ -560,7 +560,7 @@ session_start();
                             <div class="card-back">
                                 <h4>Details</h4>
                                 <p>Includes daily stretching routines and yoga flows for better flexibility.</p>
-                                <a href="php/workout/plans.php" class="btn btn-outline-light">Start Now</a>
+                                <a href="php/workout/workout_plan.php" class="btn btn-outline-light">Start Now</a>
                             </div>
                         </div>
                     </div>
@@ -678,7 +678,7 @@ session_start();
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
                         <li><a href="php/dashboard/dashboard.php">Dashboard</a></li>
-                        <li><a href="php/workout/plans.php">Workouts</a></li>
+                        <li><a href="php/workout/workout_plan.php">Workouts</a></li>
                         <li><a href="php/nutrition/meal_plan.php">Nutrition</a></li>
                         <li><a href="php/progress/log_workout.php">Progress</a></li>
                     </ul>

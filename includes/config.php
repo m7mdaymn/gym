@@ -3,8 +3,8 @@ session_start();
 
 $host = 'localhost';
 $dbname = 'fitness_app';
-$username = 'root'; // Default XAMPP MySQL user
-$password = ''; // Default XAMPP MySQL password (empty)
+$username = 'root'; 
+$password = ''; 
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);

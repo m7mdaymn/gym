@@ -1,0 +1,147 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    padding-top: 70px;
+    color: #e0e0e0;
+    overflow-x: hidden;
+}
+
+.nav-link.username {
+    font-weight: 700;
+    color: #FFD700; /* Gold color to make it stand out */
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #000000;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #FFFFFF;
+    box-shadow: 0 2px 15px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.navbar.hidden {
+    transform: translateY(-100%);
+}
+
+.navbar-brand {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #FFFFFF !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.navbar-brand:hover {
+    color: #CCCCCC !important;
+}
+
+.nav-link {
+    color: #FFFFFF !important;
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #CCCCCC !important;
+    transform: translateY(-3px);
+}
+
+.nav-link.active {
+    color: #CCCCCC !important;
+    border-bottom: 2px solid #FFFFFF;
+}
+
+.nav-icon {
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-icon:hover {
+    color: #CCCCCC;
+    transform: scale(1.1);
+}
+
+.dropdown-menu {
+    background-color: #000000;
+    border: 1px solid #FFFFFF;
+}
+
+.dropdown-item {
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.dropdown-item:hover {
+    background-color: #333333;
+    color: #CCCCCC;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #000000;
+    padding: 3rem 0;
+    border-top: 1px solid #FFFFFF;
+    margin: 8rem 0 0 0;
+}
+
+footer h5 {
+    color: #FFFFFF;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+footer p {
+    color: #e0e0e0;
+}
+
+footer a {
+    color: #CCCCCC;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #FFFFFF;
+}
+
+footer .gym-partners img {
+    max-height: 50px;
+    margin: 0 1rem;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+footer .gym-partners img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 0;
+    }
+
+    .nav-link {
+        padding: 0.5rem 1rem;
+    }
+
+    footer .gym-partners img {
+        max-height: 40px;
+        margin: 0.5rem;
+    }
+}
