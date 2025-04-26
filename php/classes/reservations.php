@@ -250,6 +250,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     <!-- Custom CSS -->
     <link href="../../assets/css/global.css" rel="stylesheet">
     <style>
+
+
         body {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             color: #ffffff;
@@ -437,6 +439,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         .badge-session {
             background: #00ddeb;
         }
+
+        select option {
+             background-color: #000;
+        }
     </style>
 </head>
 <body>
@@ -594,7 +600,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                                                     <div class="mb-3">
                                                         <label for="session_focus-<?php echo $trainer['id']; ?>" class="form-label">Session Focus (e.g., Strength, Flexibility)</label>
                                                         <select class="form-select" id="session_focus-<?php echo $trainer['id']; ?>" name="session_focus" required>
-                                                            <option value="">-- Select Focus --</option>
+                                                            <option  value="">-- Select Focus --</option>
                                                             <option value="Strength Training">Strength Training</option>
                                                             <option value="Cardio">Cardio</option>
                                                             <option value="Flexibility">Flexibility</option>

@@ -36,7 +36,7 @@ try {
     <?php include '../includes/navbar.php'; ?>
 
     <!-- Trainers Section -->
-    <div class="store-section">
+    <div class="store-section" style="margin: 0 0 120px 0;">
         <div class="container">
             <h2 class="text-center mb-4">Our Trainers</h2>
 

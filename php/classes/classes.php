@@ -35,7 +35,7 @@ try {
     <?php include '../includes/navbar.php'; ?>
 
     <!-- Classes Section -->
-    <div class="store-section">
+    <div class="store-section" style="margin-top: 100px;">
         <div class="container">
             <h2 class="text-center mb-4">Available Classes</h2>
 

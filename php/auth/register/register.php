@@ -289,7 +289,7 @@ a:hover {
                 <button type="submit" class="btn btn-primary w-100">Register</button>
             </form>
             <div id="responseMessage" class="mt-3"></div>
-            <p class="text-center mt-3">
+            <p class="text-center mt-3" style="color:rgb(56, 147, 222);">
                 Already have an account?
                 <a href="../login/login.php">Login</a>
             </p>

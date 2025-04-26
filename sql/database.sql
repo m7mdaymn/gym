@@ -285,3 +285,39 @@ INSERT INTO trainer_availability (trainer_id, available_date, start_time, end_ti
 VALUES (1, '2025-04-25', '09:00:00', '12:00:00'),
        (1, '2025-04-25', '14:00:00', '17:00:00'),
        (2, '2025-04-25', '10:00:00', '13:00:00');
+
+
+
+
+
+    --   muhmd
+
+
+CREATE TABLE user_activities (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    exercise VARCHAR(100) NOT NULL,
+    duration INT NOT NULL, -- Duration in minutes
+    completed BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+
+ALTER TABLE users
+ADD COLUMN height DECIMAL(5,2) DEFAULT NULL,
+ADD COLUMN weight DECIMAL(5,2) DEFAULT NULL,
+ADD COLUMN age INT DEFAULT NULL;
+
+
+
+
+
+
+
+-- muhmd updated in product 
+
+ALTER TABLE products ADD COLUMN image_path VARCHAR(255) DEFAULT NULL;
+
+UPDATE products SET image_path = 'assets/image/products/product1.jpg' WHERE id = 1;
+UPDATE products SET image_path = 'assets/image/products/product2.jpg' WHERE id = 2;

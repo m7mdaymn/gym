@@ -34,11 +34,12 @@ if (session_status() === PHP_SESSION_NONE) {
       padding: 50px;
       border-radius: 25px;
       box-shadow: 0 0 80px rgba(255,255,255,0.05);
+      margin-top: 52px;
     }
 
     .inner-container {
       background-color: #000;
-      padding: 40px;
+      padding: 70px;
       border-radius: 20px;
       border: 1px solid #333;
       width: 100%;
@@ -66,10 +67,10 @@ if (session_status() === PHP_SESSION_NONE) {
       background-color: #111;
       border: 1px solid #333;
       border-radius: 10px;
-      color: #fff;
       margin-bottom: 20px;
       font-size: 15px;
       transition: 0.3s ease;
+      color: white !important;
     }
 
     .form-control:focus {

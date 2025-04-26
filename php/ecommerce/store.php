@@ -1,5 +1,4 @@
 <?php
-
 // Include database connection
 require_once '../../includes/config.php';
 
@@ -35,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                 }
                 $success = 'Product added to cart successfully!';
             } else {
-                $error = 'Product not available or insufficient stock.';
+                $error = 'Product Cooker or insufficient stock.';
             }
         } catch (PDOException $e) {
             $error = 'Database error: ' . $e->getMessage();
@@ -54,6 +53,9 @@ try {
     $error = 'Database error: ' . $e->getMessage();
     $products = [];
 }
+
+// Base URL for images (adjust if your project is in a subdirectory)
+$baseImageUrl = '/gym/'; // Adjust this based on your server setup
 ?>
 
 <!DOCTYPE html>
@@ -69,7 +71,8 @@ try {
     <link href="../../assets/css/ecommerce.css" rel="stylesheet">
     <script src="../../assets/js/global.js"></script>
 </head>
-<body>    <?php include '../includes/navbar.php'; ?>
+<body>
+    <?php include '../includes/navbar.php'; ?>
 
     <!-- Store Section -->
     <div class="store-section">
@@ -95,7 +98,21 @@ try {
                         <div class="col">
                             <div class="product-card">
                                 <div class="product-image">
-                                    <img src="../../assets/images/product-placeholder.jpg" alt="<?php echo htmlspecialchars($product['product_name']); ?>">
+                                    <?php
+                                    // Construct the image path based on product ID
+                                    $imageFileName = 'product' . $product['id'] . '.jpg'; // e.g., product1.jpg for id=1
+                                    $imagePath = 'assets/image/products/' . $imageFileName;
+                                    $absoluteImagePath = __DIR__ . '/../../' . $imagePath;
+
+                                    // Check if the image file exists on the server
+                                    if (file_exists($absoluteImagePath)) {
+                                        $imageSrc = $baseImageUrl . $imagePath;
+                                    } else {
+                                        $imageSrc = $baseImageUrl . 'assets/image/product-placeholder.jpg';
+                                        echo "<!-- Debug: Image not found for product {$product['id']}, using fallback -->";
+                                    }
+                                    ?>
+                                    <img src="<?php echo $imageSrc; ?>" alt="<?php echo htmlspecialchars($product['product_name']); ?>">
                                 </div>
                                 <div class="product-info">
                                     <h5><?php echo htmlspecialchars($product['product_name']); ?></h5>

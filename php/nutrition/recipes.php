@@ -48,7 +48,7 @@ $recipes = [
     <?php include '../includes/navbar.php'; ?>
 
     <!-- Recipes Section -->
-    <div class="store-section">
+    <div class="store-section" style="margin-bottom: 65px;">
         <div class="container">
             <h2 class="text-center mb-4">Recipes</h2>
 
@@ -86,6 +86,7 @@ $recipes = [
             color: #00ddeb;
             margin-bottom: 1rem;
         }
+
     </style>
 </body>
 </html>

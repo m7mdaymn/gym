@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     <?php include '../includes/navbar.php'; ?>
 
     <!-- Contact Form Section -->
-    <div class="store-section">
+    <div class="store-section" style="margin-top: 120px; margin-bottom: 100px;">
         <div class="container">
             <h2 class="text-center mb-4">Contact Us</h2>
 

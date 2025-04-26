@@ -45,7 +45,6 @@ session_start();
                         <a class="nav-link" href="#blog">Blog</a>
                     </li>
                     <?php if (isset($_SESSION['user_id'])): ?>
-                       
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="userFeaturesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 User Features
@@ -169,7 +168,7 @@ session_start();
             <div class="row text-center">
                 <div class="col-md-4 mb-4">
                     <div class="feature-card">
-                        <img src="assets/image/yoga-class.jpg" alt="Yoga Class" class="class-img">
+                        <img src="assets/image/yoga-class.jpg" alt="Yoga Class" class="class-img" loading="lazy">
                         <h4>Yoga Sessions</h4>
                         <p>Join our calming yoga classes to improve flexibility.</p>
                         <a href="php/classes/classes.php" class="btn btn-outline-light">Book Now</a>
@@ -177,7 +176,7 @@ session_start();
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="feature-card">
-                        <img src="assets/image/spin.jpg" alt="Spin Class" class="class-img">
+                        <img src="assets/image/spin.jpg" alt="Spin Class" class="class-img" loading="lazy">
                         <h4>Spin Classes</h4>
                         <p>High-energy cycling sessions to boost cardio.</p>
                         <a href="php/classes/classes.php" class="btn btn-outline-light">Book Now</a>
@@ -185,7 +184,7 @@ session_start();
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="feature-card">
-                        <img src="assets/image/strength.jpg" alt="Strength Training" class="class-img">
+                        <img src="assets/image/strength.jpg" alt="Strength Training" class="class-img" loading="lazy">
                         <h4>Strength Training</h4>
                         <p>Group workouts to build muscle and strength.</p>
                         <a href="php/classes/classes.php" class="btn btn-outline-light">Book Now</a>
@@ -202,149 +201,68 @@ session_start();
             <div class="row">
                 <div class="col-md-3 col-sm-6 mb-4">
                     <div class="coach-card">
-                        <img src="assets/image/coach.jpg" alt="Coach Hevy" class="trainer-img">
-                        <div class="card-body text-center">
-                            <h5 class="fw-bold">Coach Hevy</h5>
-                            <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#contactModal0">Contact Trainer</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 mb-4">
-                    <div class="coach-card">
-                        <img src="assets/image/coach.jpg" alt="Mohamed Ayman" class="trainer-img">
+                        <img src="assets/image/coach.jpg" alt="Mohamed Ayman" class="trainer-img" loading="lazy">
                         <div class="card-body text-center">
                             <h5 class="fw-bold">Mohamed Ayman</h5>
-                            <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#contactModal1">Contact Trainer</button>
+                            <button class="btn btn-primary btn-sm mt-2 contact-trainer-btn" data-trainer-name="Mohamed Ayman" data-bs-toggle="modal" data-bs-target="#trainerContactModal">Contact Trainer</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-4">
                     <div class="coach-card">
-                        <img src="assets/image/coach.jpg" alt="Abdelrahman Tolba" class="trainer-img">
+                        <img src="assets/image/mohamed_mahmoud.jpg" alt="Mohamed Mahmoud" class="trainer-img" loading="lazy">
+                        <div class="card-body text-center">
+                            <h5 class="fw-bold">Mohamed Mahmoud</h5>
+                            <button class="btn btn-primary btn-sm mt-2 contact-trainer-btn" data-trainer-name="Mohamed Mahmoud" data-bs-toggle="modal" data-bs-target="#trainerContactModal">Contact Trainer</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="coach-card">
+                        <img src="assets/image/tolba.jpg" alt="Abdelrahman Tolba" class="trainer-img" loading="lazy">
                         <div class="card-body text-center">
                             <h5 class="fw-bold">Abdelrahman Tolba</h5>
-                            <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#contactModal2">Contact Trainer</button>
+                            <button class="btn btn-primary btn-sm mt-2 contact-trainer-btn" data-trainer-name="Abdelrahman Tolba" data-bs-toggle="modal" data-bs-target="#trainerContactModal">Contact Trainer</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-4">
                     <div class="coach-card">
-                        <img src="assets/image/coach.jpg" alt="Zyad Mohamed" class="trainer-img">
+                        <img src="assets/image/tolbaimg.jpg" alt="Zyad Mohamed" class="trainer-img" loading="lazy">
                         <div class="card-body text-center">
                             <h5 class="fw-bold">Zyad Mohamed</h5>
-                            <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#contactModal3">Contact Trainer</button>
+                            <button class="btn btn-primary btn-sm mt-2 contact-trainer-btn" data-trainer-name="Zyad Mohamed" data-bs-toggle="modal" data-bs-target="#trainerContactModal">Contact Trainer</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Contact Modals -->
-                <div class="modal fade" id="contactModal0" tabindex="-1" aria-labelledby="contactModalLabel0" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="contactModalLabel0">Contact Coach Hevy</h5>
+                <!-- Single Contact Modal -->
+                <div class="modal fade" id="trainerContactModal" tabindex="-1" aria-labelledby="trainerContactModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content trainer-modal-content">
+                            <div class="modal-header trainer-modal-header">
+                                <h5 class="modal-title" id="trainerContactModalLabel">Contact Trainer</h5>
                                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body">
-                                <form action="php/contact/contact_coach.php" method="POST" onsubmit="showToast(event, 'Message sent to Coach Hevy!')">
-                                    <input type="hidden" name="coach_name" value="Coach Hevy">
-                                    <div class="mb-3">
-                                        <label for="name0" class="form-label">Your Name</label>
-                                        <input type="text" class="form-control" id="name0" name="name" placeholder="Enter your full name (e.g., John Doe)" required>
+                            <div class="modal-body trainer-modal-body">
+                                <form action="php/contact/contact_coach.php" method="POST" id="trainerContactForm">
+                                    <input type="hidden" name="coach_name" id="coachNameInput">
+                                    <div class="mb-4 text-center">
+                                        <h6 class="trainer-name-display">You are contacting: <span id="trainerNameDisplay"></span></h6>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="email0" class="form-label">Your Email</label>
-                                        <input type="email" class="form-control" id="email0" name="email" placeholder="Enter your email (e.g., john@example.com)" required>
+                                        <label for="userName" class="form-label">Your Name</label>
+                                        <input type="text" class="form-control trainer-input" id="userName" name="name" placeholder="Enter your full name (e.g., John Doe)" required>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="message0" class="form-label">Message</label>
-                                        <textarea class="form-control" id="message0" name="message" rows="4" placeholder="Write your message (e.g., I need help with my workout plan)" required></textarea>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary w-100">Send Message</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal fade" id="contactModal1" tabindex="-1" aria-labelledby="contactModalLabel1" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="contactModalLabel1">Contact Mohamed Ayman</h5>
-                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form action="php/contact/contact_coach.php" method="POST" onsubmit="showToast(event, 'Message sent to Mohamed Ayman!')">
-                                    <input type="hidden" name="coach_name" value="Mohamed Ayman">
-                                    <div class="mb-3">
-                                        <label for="name1" class="form-label">Your Name</label>
-                                        <input type="text" class="form-control" id="name1" name="name" placeholder="Enter your full name" required>
+                                        <label for="userEmail" class="form-label">Your Email</label>
+                                        <input type="email" class="form-control trainer-input" id="userEmail" name="email" placeholder="Enter your email (e.g., john@example.com)" required>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="email1" class="form-label">Your Email</label>
-                                        <input type="email" class="form-control" id="email1" name="email" placeholder="Enter your email" required>
+                                        <label for="userMessage" class="form-label">Message</label>
+                                        <textarea class="form-control trainer-input" id="userMessage" name="message" rows="4" placeholder="Write your message (e.g., I need help with my workout plan)" required></textarea>
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="message1" class="form-label">Message</label>
-                                        <textarea class="form-control" id="message1" name="message" rows="4" placeholder="Write your message" required></textarea>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary w-100">Send Message</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal fade" id="contactModal2" tabindex="-1" aria-labelledby="contactModalLabel2" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="contactModalLabel2">Contact Abdelrahman Tolba</h5>
-                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form action="php/contact/contact_coach.php" method="POST" onsubmit="showToast(event, 'Message sent to Abdelrahman Tolba!')">
-                                    <input type="hidden" name="coach_name" value="Abdelrahman Tolba">
-                                    <div class="mb-3">
-                                        <label for="name2" class="form-label">Your Name</label>
-                                        <input type="text" class="form-control" id="name2" name="name" placeholder="Enter your full name (e.g., John Doe)" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="email2" class="form-label">Your Email</label>
-                                        <input type="email" class="form-control" id="email2" name="email" placeholder="Enter your email (e.g., john@example.com)" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="message2" class="form-label">Message</label>
-                                        <textarea class="form-control" id="message2" name="message" rows="4" placeholder="Write your message (e.g., I need help with my workout plan)" required></textarea>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary w-100">Send Message</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal fade" id="contactModal3" tabindex="-1" aria-labelledby="contactModalLabel3" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="contactModalLabel3">Contact Zyad Mohamed</h5>
-                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form action="php/contact/contact_coach.php" method="POST" onsubmit="showToast(event, 'Message sent to Zyad Mohamed!')">
-                                    <input type="hidden" name="coach_name" value="Zyad Mohamed">
-                                    <div class="mb-3">
-                                        <label for="name3" class="form-label">Your Name</label>
-                                        <input type="text" class="form-control" id="name3" name="name" placeholder="Enter your full name (e.g., John Doe)" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="email3" class="form-label">Your Email</label>
-                                        <input type="email" class="form-control" id="email3" name="email" placeholder="Enter your email (e.g., john@example.com)" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="message3" class="form-label">Message</label>
-                                        <textarea class="form-control" id="message3" name="message" rows="4" placeholder="Write your message (e.g., I need help with my workout plan)" required></textarea>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                                    <button type="submit" class="btn btn-primary w-100 trainer-submit-btn">Send Message</button>
                                 </form>
                             </div>
                         </div>
@@ -362,7 +280,7 @@ session_start();
                 <div class="col-md-4 mb-4">
                     <div class="plan-card">
                         <div class="plan-img-wrapper">
-                            <img src="assets/image/basic-plan.jpg" alt="Basic Plan" class="plan-img">
+                            <img src="assets/image/basic-plan.jpg" alt="Basic Plan" class="plan-img" loading="lazy">
                         </div>
                         <h3>Basic Plan</h3>
                         <p class="price">$29.99/month</p>
@@ -377,7 +295,7 @@ session_start();
                 <div class="col-md-4 mb-4">
                     <div class="plan-card">
                         <div class="plan-img-wrapper">
-                            <img src="assets/image/pro-plan.jpg" alt="Pro Plan" class="plan-img">
+                            <img src="assets/image/pro-plan.jpg" alt="Pro Plan" class="plan-img" loading="lazy">
                         </div>
                         <h3>Pro Plan</h3>
                         <p class="price">$49.99/month</p>
@@ -392,7 +310,7 @@ session_start();
                 <div class="col-md-4 mb-4">
                     <div class="plan-card premium">
                         <div class="plan-img-wrapper">
-                            <img src="assets/image/elite-plan.jpg" alt="Elite Plan" class="plan-img">
+                            <img src="assets/image/elite-plan.jpg" alt="Elite Plan" class="plan-img" loading="lazy">
                             <span class="premium-badge">Premium</span>
                         </div>
                         <h3>Elite Plan</h3>
@@ -420,7 +338,7 @@ session_start();
                 <div class="col-md-6 mb-4">
                     <div class="shop-card best-seller">
                         <div class="shop-img-wrapper">
-                            <img src="assets/image/supplements.jpg" alt="Supplements" class="shop-img">
+                            <img src="assets/image/supplements.jpg" alt="Supplements" class="shop-img" loading="lazy">
                             <span class="best-seller-badge">Best Seller</span>
                         </div>
                         <h4>Premium Supplements</h4>
@@ -431,7 +349,7 @@ session_start();
                 <div class="col-md-6 mb-4">
                     <div class="shop-card">
                         <div class="shop-img-wrapper">
-                            <img src="assets/image/equipment.jpg" alt="Equipment" class="shop-img">
+                            <img src="assets/image/equipment.jpg" alt="Equipment" class="shop-img" loading="lazy">
                         </div>
                         <h4>Durable Equipment</h4>
                         <p>Build your home gym with our high-quality dumbbells, kettlebells, and resistance bands.</p>
@@ -453,7 +371,7 @@ session_start();
                         <div class="blog-card">
                             <div class="row g-0">
                                 <div class="col-md-5">
-                                    <img src="assets/image/top-5-workouts.jpg" alt="Top 5 Workouts" class="blog-img">
+                                    <img src="assets/image/top-5-workouts.jpg" alt="Top 5 Workouts" class="blog-img" loading="lazy">
                                 </div>
                                 <div class="col-md-7 d-flex align-items-center">
                                     <div class="blog-content">
@@ -469,7 +387,7 @@ session_start();
                         <div class="blog-card">
                             <div class="row g-0">
                                 <div class="col-md-5">
-                                    <img src="assets/image/nutrition-tips.jpg" alt="Nutrition Tips" class="blog-img">
+                                    <img src="assets/image/nutrition-tips.jpg" alt="Nutrition Tips" class="blog-img" loading="lazy">
                                 </div>
                                 <div class="col-md-7 d-flex align-items-center">
                                     <div class="blog-content">
@@ -490,7 +408,7 @@ session_start();
                         <div class="blog-card featured">
                             <div class="row g-0">
                                 <div class="col-md-5">
-                                    <img src="assets/image/recovery-guide.jpg" alt="Recovery Guide" class="blog-img">
+                                    <img src="assets/image/recovery-guide.jpg" alt="Recovery Guide" class="blog-img" loading="lazy">
                                     <span class="featured-badge">Featured</span>
                                 </div>
                                 <div class="col-md-7 d-flex align-items-center">
@@ -517,7 +435,7 @@ session_start();
                     <div class="workout-card">
                         <div class="card-inner">
                             <div class="card-front">
-                                <img src="assets/image/cardio-plan.jpg" alt="Cardio Plan" class="workout-img">
+                                <img src="assets/image/cardio-plan.jpg" alt="Cardio Plan" class="workout-img" loading="lazy">
                                 <h4>Cardio Plans</h4>
                                 <p>Boost your endurance with tailored cardio routines.</p>
                                 <span class="intensity-label">Intensity: Moderate</span>
@@ -534,7 +452,7 @@ session_start();
                     <div class="workout-card popular">
                         <div class="card-inner">
                             <div class="card-front">
-                                <img src="assets/image/strength-plan.jpg" alt="Strength Plan" class="workout-img">
+                                <img src="assets/image/strength-plan.jpg" alt="Strength Plan" class="workout-img" loading="lazy">
                                 <span class="popular-badge">Most Popular</span>
                                 <h4>Strength Plans</h4>
                                 <p>Build muscle with structured strength programs.</p>
@@ -552,7 +470,7 @@ session_start();
                     <div class="workout-card">
                         <div class="card-inner">
                             <div class="card-front">
-                                <img src="assets/image/flexibility-plan.jpg" alt="Flexibility Plan" class="workout-img">
+                                <img src="assets/image/flexibility-plan.jpg" alt="Flexibility Plan" class="workout-img" loading="lazy">
                                 <h4>Flexibility Plans</h4>
                                 <p>Improve mobility with yoga and stretching.</p>
                                 <span class="intensity-label">Intensity: Low</span>
@@ -577,7 +495,7 @@ session_start();
                 <div class="col-md-4 mb-4">
                     <div class="nutrition-card">
                         <div class="nutrition-img-wrapper">
-                            <img src="assets/image/meal-plan.jpg" alt="Meal Plan" class="nutrition-img">
+                            <img src="assets/image/meal-plan.jpg" alt="Meal Plan" class="nutrition-img" loading="lazy">
                         </div>
                         <h4>Custom Meal Plans</h4>
                         <p>Get personalized diet plans tailored to your fitness goals and preferences.</p>
@@ -587,7 +505,7 @@ session_start();
                 <div class="col-md-4 mb-4">
                     <div class="nutrition-card">
                         <div class="nutrition-img-wrapper">
-                            <img src="assets/image/calorie-tracking.jpg" alt="Calorie Tracking" class="nutrition-img">
+                            <img src="assets/image/calorie-tracking.jpg" alt="Calorie Tracking" class="nutrition-img" loading="lazy">
                         </div>
                         <h4>Smart Calorie Tracking</h4>
                         <p>Easily monitor your daily calorie intake with our intuitive tracking tools.</p>
@@ -597,7 +515,7 @@ session_start();
                 <div class="col-md-4 mb-4">
                     <div class="nutrition-card recommended">
                         <div class="nutrition-img-wrapper">
-                            <img src="assets/image/recipes.jpg" alt="Recipes" class="nutrition-img">
+                            <img src="assets/image/recipes.jpg" alt="Recipes" class="nutrition-img" loading="lazy">
                             <span class="recommended-badge">Recommended</span>
                         </div>
                         <h4>Healthy Recipes</h4>
@@ -617,9 +535,9 @@ session_start();
                 <div class="col-md-4 mb-4">
                     <div class="progress-card">
                         <div class="progress-img-wrapper">
-                            <img src="assets/image/weight-tracking.jpg" alt="Weight Tracking" class="progress-img">
+                            <img src="assets/image/weight-tracking.jpg" alt="Weight Tracking" class="progress-img" loading="lazy">
                         </div>
-                        <h4>Weight Tracking</h4>
+                        <h6>Weight Tracking</h6>
                         <p>Monitor your weight changes over time with detailed insights.</p>
                         <div class="progress-bar">
                             <div class="progress-fill" style="width: 70%;">70%</div>
@@ -630,7 +548,7 @@ session_start();
                 <div class="col-md-4 mb-4">
                     <div class="progress-card">
                         <div class="progress-img-wrapper">
-                            <img src="assets/image/workout-stats.jpg" alt="Workout Stats" class="progress-img">
+                            <img src="assets/image/workout-stats.jpg" alt="Workout Stats" class="progress-img" loading="lazy">
                         </div>
                         <h4>Workout Stats</h4>
                         <p>Analyze your workout performance with in-depth statistics.</p>
@@ -643,7 +561,7 @@ session_start();
                 <div class="col-md-4 mb-4">
                     <div class="progress-card milestone">
                         <div class="progress-img-wrapper">
-                            <img src="assets/image/achievements.jpg" alt="Achievements" class="progress-img">
+                            <img src="assets/image/achievements.jpg" alt="Achievements" class="progress-img" loading="lazy">
                             <span class="milestone-badge">Milestone</span>
                         </div>
                         <h4>Achievements</h4>
@@ -669,9 +587,9 @@ session_start();
                 <div class="col-md-4 mb-4">
                     <h5>Our Gym Partners</h5>
                     <div class="gym-partners d-flex flex-wrap justify-content-center w-1">
-                        <img class="w-" src="assets/image/evolve_text_white.webp" alt="Partner 1">
-                        <img src="assets/image/logo.webp" alt="Partner 2">
-                        <img src="assets/image/جيماوي-تكست.-1-optimized.webp" alt="Partner 3">
+                        <img class="w-" src="assets/image/evolve_text_white.webp" alt="Partner 1" loading="lazy">
+                        <img src="assets/image/logo.webp" alt="Partner 2" loading="lazy">
+                        <img src="assets/image/جيماوي-تكست.-1-optimized.webp" alt="Partner 3" loading="lazy">
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
@@ -710,6 +628,7 @@ session_start();
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
     <script>
         // Contact Form Toggle
         const contactToggle = document.getElementById('contactToggle');
@@ -777,6 +696,24 @@ session_start();
                 if (cardTop < windowHeight - 100) {
                     card.classList.add('active');
                 }
+            });
+        });
+
+        // Dynamic Trainer Modal Handler
+        document.querySelectorAll('.contact-trainer-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const trainerName = this.getAttribute('data-trainer-name');
+                // Update modal title
+                document.getElementById('trainerContactModalLabel').textContent = `Contact ${trainerName}`;
+                // Update the hidden input for the form
+                document.getElementById('coachNameInput').value = trainerName;
+                // Update the display text in the modal
+                document.getElementById('trainerNameDisplay').textContent = trainerName;
+                // Update the toast message dynamically
+                const form = document.getElementById('trainerContactForm');
+                form.onsubmit = function (event) {
+                    showToast(event, `Message sent to ${trainerName}!`);
+                };
             });
         });
     </script>
