@@ -97,7 +97,7 @@ session_start();
             <h1 class="mb-4">Track, Train, Transform</h1>
             <p class="lead mb-4">Your ultimate fitness companion for workouts, nutrition, and community support.</p>
             <div class="d-flex justify-content-center gap-3">
-                <a href="php/auth/register/register.php" class="btn btn-primary btn-lg">Join Now</a>
+                <a href="#membership" class="btn btn-primary btn-lg">Join Now</a>
                 <a href="#features" class="btn btn-outline-light btn-lg">Explore Features</a>
             </div>
         </div>
